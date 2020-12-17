@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDom from "react-dom"
+import HeaderBlock from "./components/HeaderBlock/HeaderBlock";
 
 
 const AppHeader = () => {
@@ -30,6 +31,7 @@ const AppInput = () => {
 const App = () => {
     return (
         <>
+            <HeaderBlock/>
             <AppHeader/>
             <AppContent/>
             <AppInput/>
