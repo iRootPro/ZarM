@@ -9,19 +9,31 @@ const AppHeader = () => {
 };
 
 const AppContent = () => {
+    const items = ['Windows', 'Mac Os']
+    const firstItem = 'Item0'
+    const isAuth = false
     return (
         <ul>
-            <li>Windows</li>
-            <li>Mac OS</li>
+            {isAuth ? firstItem : null}
+            {items.map(item => <li>{item}</li>)}
         </ul>
     );
 };
+
+const AppInput = () => {
+    const placeholder = 'Search...'
+    return (
+        <input type="text" placeholder={placeholder}/>
+    )
+}
 
 const App = () => {
     return (
         <>
             <AppHeader/>
-            <AppContent/></>
+            <AppContent/>
+            <AppInput/>
+        </>
     );
 };
 
