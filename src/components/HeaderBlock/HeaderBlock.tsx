@@ -2,13 +2,13 @@ import React from 'react';
 import style from './HeaderBlock.module.css'
 import ReactLogo from './img/logo.png'
 
-const HeaderBlock = () => {
+const HeaderBlock = ({title, description, hideBackground = false}: propsType) => {
+    const backStyle = hideBackground ? {backgroundImage: "none"} : {}
     return (
-        <div className={style.cover}>
+        <div className={style.cover} style={backStyle}>
             <div className={style.wrap}>
-                <h1 className={style.header}>Учите слова онлайн</h1>
-                <p className={style.descr}>Воспользуйтесь карточками для запоминания и пополнения активныйх словарных
-                    запасов</p>
+                {title && <h1 className={style.header}>{title}</h1>}
+                {description && <p className={style.descr}>{description}</p>}
                 <img src={ReactLogo} alt="React logo"/>
             </div>
         </div>
@@ -16,3 +16,12 @@ const HeaderBlock = () => {
 };
 
 export default HeaderBlock;
+
+
+// types
+
+type propsType = {
+    title?: string
+    description?: string
+    hideBackground?: boolean
+}
