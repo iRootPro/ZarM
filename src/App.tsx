@@ -4,6 +4,7 @@ import ContentBlock from "./components/ContentBlock/ContentBlock";
 import FooterBlock from "./components/FooterBlock/FooterBlock";
 import Header from "./components/Header/Header";
 import Paragraph from "./components/Paragraph/Paragraph";
+import Card from "./components/Card/Card";
 
 const App = () => {
     return (
@@ -13,6 +14,7 @@ const App = () => {
                 <Paragraph>Воспользуйтесь карточками для запоминания и пополнения активныйх словарных
                     запасов</Paragraph>
             </HeaderBlock>
+            {wordsList.map(word => <Card eng={word.eng} rus={word.rus}/>)}
             <ContentBlock
                 title="Тренируй память!"
                 description="Тебе будут даны карточки со словами, ты должен их выучить путем повторения."
@@ -23,3 +25,51 @@ const App = () => {
 };
 
 export default App;
+
+export const wordsList = [
+    {
+        eng: 'between',
+        rus: 'между'
+    },
+    {
+        eng: 'high',
+        rus: 'высокий'
+    },
+    {
+        eng: 'really',
+        rus: 'действительно'
+    },
+    {
+        eng: 'something',
+        rus: 'что-нибудь'
+    },
+    {
+        eng: 'most',
+        rus: 'большинство'
+    },
+    {
+        eng: 'another',
+        rus: 'другой'
+    },
+    {
+        eng: 'much',
+        rus: 'много'
+    },
+    {
+        eng: 'family',
+        rus: 'семья'
+    },
+    {
+        eng: 'own',
+        rus: 'личный'
+    },
+    {
+        eng: 'out',
+        rus: 'из/вне'
+    },
+    {
+        eng: 'leave',
+        rus: 'покидать'
+    },
+];
+
