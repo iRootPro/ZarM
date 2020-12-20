@@ -5,7 +5,7 @@ class Card extends React.Component<any, any> {
     render() {
         const {eng, rus} = this.props
         return (
-            <div className={s.card}>
+            <div onClick={this.handlerOnClick} className={s.card}>
                 <div className={s.cardInner}>
                     <div className={s.cardFront}>
                         {eng}
@@ -17,6 +17,10 @@ class Card extends React.Component<any, any> {
 
             </div>
         );
+    }
+
+    private handlerOnClick = () => {
+        console.log('На русском это:', this.props.rus)
     }
 }
 

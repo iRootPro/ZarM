@@ -7,9 +7,9 @@
   height: 33px;
   width: 170px;
   margin-right: 12px;
-  
 
-  &:hover {
+
+  .done {
     .cardInner {
       transform: rotateY(180deg);
     }
@@ -27,7 +27,7 @@
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
-.cardFront, 
+.cardFront,
 .cardBack {
   position: absolute;
   width: 100%;
