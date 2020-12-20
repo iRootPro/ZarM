@@ -14,7 +14,7 @@ const App = () => {
                 <Paragraph>Воспользуйтесь карточками для запоминания и пополнения активныйх словарных
                     запасов</Paragraph>
             </HeaderBlock>
-            {wordsList.map(word => <Card eng={word.eng} rus={word.rus}/>)}
+            {wordsList.map(({eng, rus}, index) => <Card key={index} eng={eng} rus={rus}/>)}
             <ContentBlock
                 title="Тренируй память!"
                 description="Тебе будут даны карточки со словами, ты должен их выучить путем повторения."
