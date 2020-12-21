@@ -1,5 +1,6 @@
 import React from 'react';
 import s from './Card.module.scss';
+import cl from 'classnames'
 
 class Card extends React.Component<any, any> {
     state = {
@@ -9,12 +10,8 @@ class Card extends React.Component<any, any> {
     render() {
         const {eng, rus} = this.props
         const {done} = this.state
-        const cardStyle = [s.card]
-        if (done) {
-            cardStyle.push(s.done)
-        }
         return (
-            <div onClick={this.handlerOnClick} className={cardStyle.join(' ')}>
+            <div onClick={this.handlerOnClick} className={cl(s.card, {[s.done]: done})}>
                 <div className={s.cardInner}>
                     <div className={s.cardFront}>
                         {eng}
