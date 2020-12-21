@@ -1,11 +1,20 @@
-import React, {Component} from 'react';
+import React from 'react';
 import s from './Card.module.scss';
 
 class Card extends React.Component<any, any> {
+    state = {
+        done: false
+    }
+
     render() {
         const {eng, rus} = this.props
+        const {done} = this.state
+        const cardStyle = [s.card]
+        if (done) {
+            cardStyle.push(s.done)
+        }
         return (
-            <div onClick={this.handlerOnClick} className={s.card}>
+            <div onClick={this.handlerOnClick} className={cardStyle.join(' ')}>
                 <div className={s.cardInner}>
                     <div className={s.cardFront}>
                         {eng}
@@ -20,7 +29,14 @@ class Card extends React.Component<any, any> {
     }
 
     private handlerOnClick = () => {
-        console.log('На русском это:', this.props.rus)
+        if (this.state.done) {
+            this.setState({done: false})
+        } else {
+            this.setState({
+                done: true
+            })
+        }
+
     }
 }
 
