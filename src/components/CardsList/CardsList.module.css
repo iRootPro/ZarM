@@ -1,0 +1,22 @@
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+}
+
+.description {
+    font-size: 20px;
+    color: black;
+    padding-bottom: 50px;
+}
+.cardLists {
+    width: 1200px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}

@@ -5,6 +5,7 @@ import FooterBlock from "./components/FooterBlock/FooterBlock";
 import Header from "./components/Header/Header";
 import Paragraph from "./components/Paragraph/Paragraph";
 import Card from "./components/Card/Card";
+import CardsList from "./components/CardsList/CardsList";
 
 const App = () => {
     return (
@@ -14,7 +15,7 @@ const App = () => {
                 <Paragraph>Воспользуйтесь карточками для запоминания и пополнения активныйх словарных
                     запасов</Paragraph>
             </HeaderBlock>
-            {wordsList.map(({eng, rus}, index) => <Card key={index} eng={eng} rus={rus}/>)}
+            <CardsList/>
             <ContentBlock
                 title="Тренируй память!"
                 description="Тебе будут даны карточки со словами, ты должен их выучить путем повторения."
