@@ -1,3 +1,21 @@
+.root {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkIcon {
+  margin-left: 20px;
+  margin-right: 40px;
+  font-size: 24px;
+
+  &:hover {
+    color: #1BB95E;
+    cursor: pointer;
+  }
+}
+
 .card {
   font-size: 18px;
   text-align: center;
@@ -46,4 +64,11 @@
   background-color: #1BB95E;
   color: white;
   transform: rotateY(180deg);
+}
+
+.isRemembered {
+  .cardFront,
+  .cardBack {
+    text-decoration: line-through;
+  }
 }
