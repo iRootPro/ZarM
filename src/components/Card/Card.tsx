@@ -1,12 +1,12 @@
 import React from 'react';
 import s from './Card.module.scss';
 import cl from 'classnames'
-import {CheckSquareOutlined} from "@ant-design/icons";
+import {CheckSquareOutlined, DeleteOutlined} from "@ant-design/icons";
 
 class Card extends React.Component<any, any> {
     state: stateType = {
         done: false,
-        isRemembered: false
+        isRemembered: false,
     }
 
     render() {
@@ -29,9 +29,16 @@ class Card extends React.Component<any, any> {
                 <div className={s.checkIcon}>
                     <CheckSquareOutlined onClick={this.handleIsRememberedClick}/>
                 </div>
+                <div className={s.delIcon}>
+                    <DeleteOutlined onClick={this.handleDeleteCard}/>
+                </div>
             </div>
 
         );
+    }
+
+    handleDeleteCard = () => {
+        this.props.onDelete()
     }
 
     handleIsRememberedClick = () => {
@@ -60,6 +67,7 @@ export default Card;
 type propsType = {
     eng: string
     rus: string
+    onDelete: () => void
 }
 
 type stateType = {

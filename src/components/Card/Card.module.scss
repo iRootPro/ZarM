@@ -7,11 +7,21 @@
 
 .checkIcon {
   margin-left: 20px;
-  margin-right: 40px;
+  margin-right: 5px;
   font-size: 24px;
 
   &:hover {
     color: #1BB95E;
+    cursor: pointer;
+  }
+}
+
+.delIcon {
+  font-size: 24px;
+  margin-right: 40px;
+
+  &:hover {
+    color: red;
     cursor: pointer;
   }
 }
