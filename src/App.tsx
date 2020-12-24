@@ -12,6 +12,16 @@ class App extends Component<any, any> {
     state = {
         words: wordsList
     }
+
+    handleDeleteItem(id: number) {
+        this.setState(() => {
+            return {
+                ...this.state,
+                words: this.state.words.filter(word => id !== word.id)
+            }
+        })
+    }
+
     render() {
         const {words} = this.state
         return (
@@ -21,7 +31,7 @@ class App extends Component<any, any> {
                     <Paragraph>Воспользуйтесь карточками для запоминания и пополнения активныйх словарных
                         запасов</Paragraph>
                 </HeaderBlock>
-                <CardsList wordsList={words} onDeleteItem={(id: number) => console.log('### delete id:', id)}/>
+                <CardsList wordsList={words} onDeleteItem={(id: number) => this.handleDeleteItem(id)}/>
                 <ContentBlock
                     title="Тренируй память!"
                     description="Тебе будут даны карточки со словами, ты должен их выучить путем повторения."
